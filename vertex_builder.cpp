@@ -273,6 +273,7 @@ PyObject * Builder_meth_seek(Builder * self, PyObject * arg) {
         return NULL;
     }
     self->vertex_count = offset;
+    Py_RETURN_NONE;
 }
 
 void Builder_dealloc(PyObject * self) {
@@ -295,7 +296,7 @@ PyMethodDef Builder_methods[] = {
 PyType_Slot Builder_slots[] = {
     {Py_tp_members, Builder_members},
     {Py_tp_methods, Builder_methods},
-    {Py_tp_dealloc, Builder_dealloc},
+    {Py_tp_dealloc, (void *)Builder_dealloc},
     {},
 };
 
