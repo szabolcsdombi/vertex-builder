@@ -2,7 +2,7 @@ project = 'vertex-builder'
 copyright = '2021, Dombi Szabolcs'
 author = 'Dombi Szabolcs'
 
-release = '0.1.0'
+release = '0.2.0'
 
 extensions = [
     'sphinx_rtd_theme',
