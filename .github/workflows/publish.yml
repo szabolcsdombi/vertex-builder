@@ -96,3 +96,6 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: python -m twine upload dist/*.whl
+
+      - name: docs
+        run: curl -X POST -d token=${{ secrets.RTD_API_TOKEN }} https://readthedocs.org/api/v2/webhook/vertex-builder/149596/
